@@ -15,11 +15,6 @@ class _MakeAccountScreenState extends State<MakeAccountScreen> {
         appBar: AppBar(
           title: Text("S'INSCRIRE"),
           centerTitle: true,
-          leading: IconButton(
-              icon: Icon(Icons.arrow_back_outlined),
-              onPressed: () {
-                // Do something.
-              }),
         ),
         body: Container(
             child: new Center(

@@ -73,9 +73,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     height: 20.0,
                   ),
-                  RectangleButton(
-                    text: "LOGIN",
-                    press: () {},
+                  Align(
+                    alignment: Alignment
+                        .center, // Align however you like (i.e .centerRight, centerLeft)
+                    child: Container(
+                      margin: EdgeInsets.symmetric(vertical: 10),
+                      child: FlatButton(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 20, horizontal: 40),
+                          color: Colors.blue,
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/homeApp');
+                          },
+                          child: Text(
+                            "Register",
+                            style: TextStyle(color: Colors.white),
+                          )),
+                    ),
                   ),
                 ],
               ),

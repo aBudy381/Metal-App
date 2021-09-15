@@ -12,24 +12,31 @@ class Body extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          /* Text(
+      child: new Center(
+          child: Container(
+        decoration: BoxDecoration(color: Colors.white),
+        width: 370,
+        height: 400,
+        padding: EdgeInsets.all(40.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            /* Text(
             "Metal App",
             textAlign: TextAlign.right,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),*/
-          Align(
-            alignment: Alignment
-                .center, // Align however you like (i.e .centerRight, centerLeft)
-            child: Text(
-              "Metal App",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            Align(
+              alignment: Alignment
+                  .center, // Align however you like (i.e .centerRight, centerLeft)
+              child: Text(
+                "Metal App",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
             ),
-          ),
-          /*SizedBox(height: size.height * 0.03),
+
+            /*SizedBox(height: size.height * 0.03),
           SizedBox(height: size.height * 0.03),
           RoundedButton(
             text: "LOGIN",
@@ -39,28 +46,47 @@ class Body extends StatelessWidget {
             text: "SIGN UP",
             press: () {},
           ),*/
-          SizedBox(height: size.height * 0.03),
-          SizedBox(height: size.height * 0.03),
-          Align(
-            alignment: Alignment
-                .center, // Align however you like (i.e .centerRight, centerLeft)
-            child: RectangleButton(
-              text: "LOGIN",
-              press: () {
-                Navigator.pushNamed(context, LoginViewRoute);
-              },
+            SizedBox(height: size.height * 0.03),
+            SizedBox(height: size.height * 0.03),
+            Align(
+              alignment: Alignment
+                  .center, // Align however you like (i.e .centerRight, centerLeft)
+              child: Container(
+                margin: EdgeInsets.symmetric(vertical: 10),
+                width: size.width * 0.8,
+                child: FlatButton(
+                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+                    color: Colors.blue,
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/login');
+                    },
+                    child: Text(
+                      "Login",
+                      style: TextStyle(color: Colors.white),
+                    )),
+              ),
             ),
-          ),
-          Align(
-            alignment: Alignment
-                .center, // Align however you like (i.e .centerRight, centerLeft)
-            child: RectangleButton(
-              text: "REGISTER",
-              press: () {},
+            Align(
+              alignment: Alignment
+                  .center, // Align however you like (i.e .centerRight, centerLeft)
+              child: Container(
+                margin: EdgeInsets.symmetric(vertical: 10),
+                width: size.width * 0.8,
+                child: FlatButton(
+                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+                    color: Colors.blue,
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/register');
+                    },
+                    child: Text(
+                      "Register",
+                      style: TextStyle(color: Colors.white),
+                    )),
+              ),
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
+      )),
     );
   }
 }
